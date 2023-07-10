@@ -1,0 +1,43 @@
+<ion-content [fullscreen]="true">
+  <ion-searchbar></ion-searchbar>
+  <ul>
+    <li *ngFor="let pigs of pigs$ | async">
+      <span>{{ pigs.pigID }}</span><br>
+    </li>
+  </ul>
+  
+  <ion-item *ngFor="let pigs of pigs$ | async">
+    {{ pigs.pigID }}
+    <ion-icon name="ellipsis-vertical" aria-hidden="true" class="three_dots" ></ion-icon>
+  </ion-item>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-button id="sched_add_button" class="red-fab" size="medium" (click)="showOverlay()">
+      <ion-icon name="add"></ion-icon> Set
+    </ion-button>
+  </ion-fab>
+</ion-content>
+<div id="overlay" [ngStyle]="{ 'visibility': showOverlayContent ? 'visible' : 'hidden' }">
+  <div class="overlay-content">
+    <h2>Set Schedules</h2>
+    <form (submit)="addPig()">
+      <label for="pigID">Pig ID:</label>
+      <input type="text" id="pigID" name="pigID" [(ngModel)]="pigID" required>
+    
+      <label for="weight">Weight:</label>
+      <input type="number" id="weight" name="Weight" [(ngModel)]="weight" required>
+    
+      <label for="dateOfBirth">Date of Birth:</label>
+      <input type="date" id="dateOfBirth" name="dateOfBirth" [(ngModel)]="dateOfBirth" required>
+    
+      <label for="gender">Gender:</label>
+      <select id="gender" name="Gender" [(ngModel)]="gender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    
+      <button type="submit">Add Pig</button>
+    </form>
+       
+    <button id="closeButton" (click)="hideOverlay()"><ion-icon name="exit"></ion-icon>Close</button>
+  </div>
+</div>

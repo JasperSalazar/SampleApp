@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title size="medium"><img src="/assets/Header_logo.png" alt="Pig" id="Header_logo">Farm Management</ion-title>
+    </ion-toolbar>     
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card id="weather_card">  
+    <ion-card-header>
+      <ion-searchbar
+      [(ngModel)]="location"
+      (ionInput)="searchLocation()"
+      placeholder="Enter location"
+    ></ion-searchbar>
+    </ion-card-header>
+  
+    <ion-card-content >
+      <div *ngIf="weatherData$ | async as weatherData">
+        <div class="weather-info">
+          <div class="weather-logo">
+            <img [src]="getWeatherIcon(weatherData[0]?.WeatherText)" alt="Weather Condition">
+          </div>
+          <div class="weather-details">
+            <p>Temperature: {{ weatherData[0]?.Temperature?.Metric?.Value }}°C</p>
+            <p>Condition: {{ weatherData[0]?.WeatherText }}</p>
+          </div>
+        </div>
+      </div>      
+    </ion-card-content>
+  </ion-card>
+  <ion-card id="sow_card">
+    <ion-card-header>
+      <ion-card-title id="sow-card_title">6</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content id="sow_card_content">
+      <ion-icon name="ellipse" aria-hidden="true"></ion-icon>Sow Pigs
+    </ion-card-content>
+  </ion-card>
+  <ion-card id="pig_card">
+    <ion-card-header>
+      <ion-card-title id="pig-card_title">24</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content id="pig_card_content">
+      <ion-icon name="ellipse" aria-hidden="true"></ion-icon>Sow Pigs
+    </ion-card-content>
+  </ion-card>
+  <h6>To Do</h6>
+  <ion-item>
+    <ion-checkbox justify="space-between">Task Name</ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox justify="space-between">Task Name</ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox justify="space-between">Task Name</ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox justify="space-between">Task Name</ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox justify="space-between">Task Name</ion-checkbox>
+  </ion-item>
+</ion-content>

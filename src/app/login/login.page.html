@@ -1,0 +1,16 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" id="title">Porcus</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div id="container1">
+    <form (ngSubmit)="login()">
+    <input type="email" id="email" name="email"  placeholder='Email' [(ngModel)]="email" required>
+    <input type="password" id="password" name="password"  placeholder='Password' [(ngModel)]="password" required>
+
+    <button id="login_button" type="submit" >LOGIN</button>
+  </form>
+  </div>
+  <p>Doesn't have an account yet? <button  routerLink="/sign-up" id="redirect_signUp">Sign up</button></p>
+</ion-content>

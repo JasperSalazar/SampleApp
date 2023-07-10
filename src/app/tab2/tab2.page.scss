@@ -1,0 +1,80 @@
+ion-header{
+    padding: 0;
+}
+ion-title{
+    color: #FFFF;
+    background-color: #386641;
+    margin: 0;
+}
+#Header_logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px; /* Adjust the margin as needed */
+    height: 34px;
+  }
+  
+ion-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+ion-item{
+    border-radius: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 12px;
+    border: 2px solid #659D60;
+    padding: 0;
+}
+.three_dots{
+    margin-left: 77%;
+    margin-right: 0;
+}
+#sched_add_button{
+    --background: #F75555;
+    --background-hover: #ef8989 !important;
+    --background-activated: #ef8989;
+    --background-focused: #ef8989;
+    border-radius: 20px;
+    width: 78px;
+    height: 36px;
+    font-weight: bold;
+    opacity: 80%;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #659D60;
+    z-index: 9999;
+  }
+  
+  .overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFFF;
+    text-align: center;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    height: 80%;
+    z-index: 10000;
+    border: 2px solid black; 
+  }
+  
+  #closeButton {
+    width: 100%;
+    height: 40px;
+    background-color: #F75555;
+    border: none;
+    color: white;
+    border-radius: 0px 0px 18px 18px;
+    font-weight: bold;
+  }
+  

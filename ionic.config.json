@@ -1,0 +1,7 @@
+{
+  "name": "samaple_porcus",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
